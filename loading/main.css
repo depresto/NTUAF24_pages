@@ -1,133 +1,275 @@
 /*Arthor: James Ni 倪嘉宏
   The Writingman Studio 2018
 */
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: #e2e2e2;
+    padding: 0;
+    margin: 0;
+  }
 
-body {
-  background-color: #e2e2e2;
-  padding: 0;
-  margin: 0;
-}
+  p{
+    color: #3e3a39;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }  
 
-p{
-  color: #3e3a39;
-  margin-top: 6px;
-  margin-bottom: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-}  
+  pre {
+    margin: 0;
+    margin-top: 3px;
+  }
 
-pre {
-  margin: 0;
-  margin-top: 3px;
-}
+  a {
+    text-decoration: none;
+  }
 
-a {
-  text-decoration: none;
-}
-
-#Logo {
-  text-align: center;
-  position: relative;
-  margin-top: 40px;
-}
-#Logo img {
-  height: 30px;
-}
-.outer {
-    display: table;
+  #Logo {
+    text-align: center;
     position: relative;
-    height: calc( 100vh - 80px );
-    width: 100%;
+    margin-top: 40px;
+  }
+  #Logo img {
+    height: 30px;
+  }
+  #Logo2 {
+    display: none;
+    z-index: 1000;
+  }
+  #Logo2 img {
+    display: none;
+  }
+  .outer {
+      display: table;
+      position: relative;
+      height: calc( 100vh - 80px );
+      width: 100%;
+  }
+  .middle {
+      display: table-cell;
+      vertical-align: middle;
+  }
+  .inner {
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px; /*whatever width you want*/
+      position: relative;
+  }
+  #loadPic{
+    top: -100px;
+    left: 0;
+    /*right: 15%;*/
+    position: absolute;
+    text-align: center;
+    margin-left: -50px;
+    /*bottom: 220px;*/
+  }
+  #loadPic_hori{
+    display: none
+  }
+
+  #keyGif {
+    width: 500px;
+  }
+
+  #hidM, #hidL, #hidR {
+    position: absolute;
+  }
+
+  #hidL, #hidR {
+    width: 200px;
+  }
+
+  #hidM {
+    top: -35px;
+    left: 275px;
+    display: none;
+  }
+  #hidL{
+    top: -10px;
+    left: 80px;
+
+  }
+  #hidR{
+    top: -10px;
+    left: 300px;
+  }
+
+  .hidLeft{
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+    text-align: right;
+    display: none;
+  }
+  .hidRight{
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+    text-align: left;
+    display: none;
+  }
+  #poemText{
+    line-height: 30px;
+  }
+  #mHidTitles{
+    display: none;
+  }
 }
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-}
-.inner {
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px; /*whatever width you want*/
+/**********************************************/
+@media screen and (max-width: 1023px) {
+  body {
+    background-color: #DDDDDD;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  p{
+    color: #3e3a39;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }  
+
+  pre {
+    margin: 0;
+    margin-top: 3px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #Logo {
+    text-align: center;
     position: relative;
-}
-#loadPic{
-  top: -100px;
-  left: 0;
-  /*right: 15%;*/
-  position: absolute;
-  text-align: center;
-  margin-left: -50px;
-  /*bottom: 220px;*/
-}
+    margin-top: 40px;
+    display: none;
+  }
+  #Logo img {
+    height: 30px;
+    display: none;
+  }
+  #Logo2 {
+    position: absolute;
+    margin-top: 30px;
+    left:50%;
+    margin-left: -10px;
+    z-index: 1000;
+  }
+  #Logo2 img {
+    height: 20px;
+  }
+  .outer {
+      position: relative;
+      left: 50%;
+      margin-left: -10px;
+  }
+  .middle {
+  }
+  .inner {
+  }
+  #loadPic_hori{
+    top: 60px;
+    right: 3px;
+    position: relative;
+  }
+  #loadPic{
+    display: none;
+  }
 
-#keyGif {
-  width: 500px;
-}
+  #keyGif_hori {
+    height: 500px;
+  }
 
-#hidM, #hidL, #hidR {
-  position: absolute;
-}
+  #hidM, #hidL, #hidR {
+    position: absolute;
+    display: none;
+  }
 
-#hidL, #hidR {
-  width: 200px;
-}
+  #hidL, #hidR {
+    /*width: 200px;*/
+  }
 
-#hidM {
-  top: -35px;
-  left: 275px;
-  display: none;
-}
+  #hidM {
+    top: -35px;
+    left: 275px;
+    display: none;
+  }
 
-#hidL{
-  top: -10px;
-  left: 80px;
+  #hidL{
+    top: -10px;
+    left: 80px;
 
-}
-#hidR{
-  top: -10px;
-  left: 300px;
-}
+  }
+  #hidR{
+    top: -10px;
+    left: 300px;
 
-.hidLeft{
-  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
-  text-align: right;
-  display: none;
-}
-.hidRight{
-  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
-  text-align: left;
-  display: none;
-}
-#poemText{
-  line-height: 30px;
-}
+  }
 
-/*
-#decoBlock {
-  position: absolute;
-  text-align: center;
-  left: 50%;
-  width: 5px;
-  height: 200px;
-  margin: 5px;
-  background: #6d6d6d;
-  display: none;
+  .hidLeft{
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+    text-align: right;
+    display: none;
+    font-size: 25px;
+  }
+  .hidRight{
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+    text-align: left;
+    display: none;
+  }
+  .hidMiddle{
+    display: none;
+  }
+
+  #mHidTitles{
+    position: relative;
+    right: 78px;
+    visibility: hidden;
+  }
+  #mleftBlock{
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+    position: relative;
+    right: 80px;
+    bottom: 60px;
+  }
+  .line{
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+    /*font-size: 12px;*/
+  }
+  #mLeftTitle{
+    font-size: 30px;
+  }
+  #mLeftconText{
+    position: relative;
+    font-size: 16px; 
+    line-height: 0px;
+    left:5px;
+  }
+  #mRightBlock{
+    position: relative;
+    left: 120px;
+    bottom: 30px;
+  }
+  #mTime{
+    font-size: 22px;
+    text-align: right;
+  }
+  .mCont{
+    display: none;
+    font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei";
+  }
+  #mCenterContext{
+    position: relative;
+    right: calc(100% - 25px);
+  }
+  #mContext2{
+    font-size: 12px;
+    text-align: right;
+  }
+  #mContext3{
+    font-size: 15px;
+    text-align: right;
+    line-height: 5px;
+  }
 }
-*/
-/*
-
-  border-radius: 25px;
-  position: relative;
-  text-align: left;
-
-
-.keyGif{
-
-}
-
-p{
-  color: #FFFFFF;
-}
-h1{
-  color: #FFFFFF;
-}
-*/

@@ -4,7 +4,7 @@
   <!-- Arthor: James Ni 倪嘉宏 -->
   <!-- The Writingman Studio 2018 -->
   <meta charset="UTF-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta property="og:type"               content="article" />
   <meta property="og:url"                content="http://artfest.ntu.edu.tw/loading" />
   <meta property="og:title"              content="第二十四屆台大藝術季 官方網站" />
@@ -20,7 +20,14 @@
 
 <body>
   <div id = "Logo">
-    <img src = "./images/webArtLogo.png">
+    <a href="/">
+      <img src = "./images/webArtLogo.png">
+    </a>
+  </div>
+  <div id = "Logo2">
+    <a href="/">
+      <img src = "./images/webArtLogo2.png">
+    </a>
   </div>
   <div class="outer">
     <div class="middle">
@@ -28,11 +35,32 @@
         <div id = "loadPic">
           <img src = "./images/gif_final.gif" id = "keyGif">
         </div>
-
-        <div id = "hidM">|</div>
-
+        <div id = "loadPic_hori">
+          <img src = "./images/gif_final_hori.gif" id = "keyGif_hori">
+          <div id = "mHidTitles">
+            <!-- <div class="line"></div> -->
+            <p class="line">______</p>
+            <div id="mRightBlock">
+              <p class="line">________ ◣</p>
+            </div>
+            <div id="mleftBlock">
+              <a href="/ticket/#日日║現代舞蹈">
+                <p id="mLeftTitle">日 日</p>
+                <p id="mLeftconText"> 5/18.19</p>
+              </a>
+            </div>
+          </div>
+          <div id="mCenterContext">
+            <p class="mCont tWaited" id="mTime"></p>
+            <p class="mCont" id="mContext2">shadows of day</p>
+            <p class="mCont" id="mContext3">一支光敘述時間的詩</p>
+          </div>
+        </div>
+        <div id = "hidM">
+        <p class = "hidMiddle">|</p>
+        </div>
         <div id = "hidL">
-          <p class="hidLeft" id = "tWaited"></p>
+          <p class="hidLeft tWaited" ></p>
           <p class="hidLeft"><br /></p>
           <p class="hidLeft">shadows of day</p>
           <p class="hidLeft">一支用光敘述時間的詩</p>

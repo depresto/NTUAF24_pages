@@ -50,13 +50,22 @@ $(function() {
 		$.getJSON(url,function( data ){
 			data = data[0];
 
-			// console.log(data);
-			console.log(data.rewards);
+			console.log(data);
+
+			let now_time = Date.now();
+			let proj_end = Date.parse(data.end_date);
+
+			if (now_time > proj_end) {
+				window.location.href = "https://ntuaf24.backme.tw/shops/800";
+			}
 
 			for (i in data.rewards) {
 				rewards.push( data.rewards[i].category );
 
-				inventory = data.rewards[i].quantity_limit - data.rewards[i].wait_count - data.rewards[i].backer_count;
+				// inventory = data.rewards[i].quantity_limit - data.rewards[i].wait_count - data.rewards[i].backer_count;
+				inventory = data.rewards[i].quantity_limit - data.rewards[i].pledged_count - data.rewards[i].wait_pledged_count;
+
+				if (inventory < 0) {inventory = 0;}
 
 				if (data.rewards[i].quantity_limit == 0) {
 
@@ -81,12 +90,12 @@ $(function() {
 
 				} else {
 
-					$(".sec1 .content .content-size").append('\
-							<div class="col-md-4 col-sm-6 col-xs-6">\
-			          <div class="item" data-id="'+ data.rewards[i].id +'" data-category="'+ data.rewards[i].category +'">\
-			            <div class="item-limit-label">\
-			              限量 '+ data.rewards[i].quantity_limit +' 組\
-			            </div>\
+					$(".sec1 .content .content-size").append(
+							'<div class="col-md-4 col-sm-6 col-xs-6">' +
+			          '<div class="item" data-id="'+ data.rewards[i].id +'" data-category="'+ data.rewards[i].category +'">' +
+			            '<div class="item-limit-label">' +
+			              '限量 '+ data.rewards[i].quantity_limit +' 組' +
+			            '</div>\
 			            <div class="item-pic" style="background-image: url('+ data.rewards[i].avatar.url +');">\
 			              <div class="dark-cover">\
 			              </div>\

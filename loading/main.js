@@ -57,9 +57,10 @@ $(document).click(function(){
     }
 
     var imageSelector = Math.floor(section / 120);
+    // imageSelector = 31;
 
     $("#keyGif").attr("src", "./images/frame_"+ pad(imageSelector, 2) +"_delay-0.12s.gif");
-
+    $("#keyGif_hori").attr("src", "./images/frame_"+ pad(imageSelector, 2) +"_delay-0.12sh.gif");
 
     BALL_WIDTH = 40;
     POEM_WIDTH = 200;
@@ -72,15 +73,31 @@ $(document).click(function(){
                           215, 195, 160, 130, 75,
                           5, -55, -120, -160, -140,
                           -100, -55, -35, -15, -15, -15, -15]
+    bot_table = [0,   0,   0,   0,   0,  20,
+                     60, 121, 172, 202, 228,
+                    205, 186, 144, 102,  40,
+                    -23, -91,-144,-179,-209,
+                   -230,-209,-179,-144, -91,
+                    -23,  42, 103, 144, 125,
+                     82,  42,  19,   0,   0,
+                      0,]
 
     left_pos = left_table[imageSelector];
+    bot_pos = bot_table[imageSelector];
 
     console.log(left_pos);
 
     $('#hidL').css('left', left_pos);
-    $('#hidM').css('left', left_pos + POEM_WIDTH + 12);
+    $('#hidM').css('left', left_pos + POEM_WIDTH + 5);
     $('#hidR').css('left', left_pos + BALL_WIDTH + POEM_WIDTH);
+    $('#mHidTitles').css('bottom', bot_pos + 280);
 
+    if (bot_pos > 0) {
+      $('#mCenterContext').css('bottom', 300);
+    } else{
+      $('#mCenterContext').css('bottom', 450);
+    };
+    
 
     if(distance >= 1000)           seconds = Math.floor((distance % (1000 * 60)) / 1000);
     if(distance >= 1000 * 60)      minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -91,7 +108,7 @@ $(document).click(function(){
     seconds = String('00'+seconds).slice(-2);
 
     var distRead = hours + ":" + minutes + ":" + seconds;
-    $("#tWaited").text(distRead);
+    $(".tWaited").text(distRead);
 
     poem = {
       "00": "剛剛\n影子在牆壁上畫了一個完美的弧\n然後又繼續有節奏地走著\n滴答滴答",
@@ -119,6 +136,12 @@ $(document).click(function(){
     $(".hidLeft").fadeIn();
     $(".hidRight").fadeIn();
     $("#hidM").fadeIn();
+
+    $("#mHidTitles").css("display", "none")
+    $("#mHidTitles").css("visibility", "visible")
+    $("#mHidTitles").fadeIn();
+    $(".mCont").fadeIn();
+
     // console.log("time");
     clicked = true;
     
